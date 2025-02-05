@@ -9,52 +9,67 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      child: SafeArea(
-        top: true,
-        bottom: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _Title(),
-            _SubTitle(),
-            Image.asset(
-              'asset/img/misc/logo.png',
-              width: MediaQuery.of(context).size.width / 3 * 2,
-            ),
-            CustomTextFormField(
-              hintText: '이메일을 입력해주세요',
-              onChanged: (value) {},
-            ),
-            CustomTextFormField(
-              hintText: '비밀번호를 입력해주세요',
-              obscureText: true,
-              onChanged: (value) {},
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: PRIMARY_COLOR,
-              ),
-              child: Text(
-                '로그인',
-                style: TextStyle(
-                  color: Colors.white,
+      child: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: SafeArea(
+          top: true,
+          bottom: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _Title(),
+                SizedBox(
+                  height: 16,
                 ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.transparent,
-              ),
-              child: Text(
-                '회원가입',
-                style: TextStyle(
-                  color: Colors.black,
+                _SubTitle(),
+                Image.asset(
+                  'asset/img/misc/logo.png',
+                  width: MediaQuery.of(context).size.width / 3 * 2,
                 ),
-              ),
+                CustomTextFormField(
+                  hintText: '이메일을 입력해주세요',
+                  onChanged: (value) {},
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                CustomTextFormField(
+                  hintText: '비밀번호를 입력해주세요',
+                  obscureText: true,
+                  onChanged: (value) {},
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: PRIMARY_COLOR,
+                  ),
+                  child: Text(
+                    '로그인',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: Text(
+                    '회원가입',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
